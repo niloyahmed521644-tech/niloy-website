@@ -1,0 +1,1418 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Niloy Ahmed | Personal Website</title>
+
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            background-color: #111827;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #22c55e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #22c55e;
+        }
+
+
+        /* =========================
+           HOME SECTION
+        ========================= */
+
+        .hero {
+            min-height: 600px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #111827,
+                #1f2937,
+                #064e3b
+            );
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #22c55e;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #d1d5db;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            margin: 8px;
+
+            border-radius: 8px;
+
+            font-size: 17px;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #22c55e;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #16a34a;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #22c55e;
+            color: #22c55e;
+        }
+
+        .btn-secondary:hover {
+            background-color: #22c55e;
+            color: white;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           ABOUT SECTION
+        ========================= */
+
+        .about {
+            background-color: white;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 50px;
+
+            align-items: center;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* PROFILE PICTURE */
+
+        .about-image {
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            flex-shrink: 0;
+
+            border: 8px solid #22c55e;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           PERSONAL DETAILS
+        ========================= */
+
+        .details {
+            background-color: #f4f6f8;
+        }
+
+        .details-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .detail-box {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            border-left: 5px solid #22c55e;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .detail-box h3 {
+            margin-bottom: 8px;
+
+            color: #111827;
+        }
+
+        .detail-box p {
+            color: #666;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            background-color: white;
+        }
+
+        .skills-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .skill-card {
+            padding: 35px 25px;
+
+            background-color: #f8fafc;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            border: 1px solid #ddd;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .skill-card .icon {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           SKILL BARS
+        ========================= */
+
+        .skill-bars {
+            max-width: 800px;
+
+            margin: 60px auto 0;
+        }
+
+        .bar {
+            margin-bottom: 25px;
+        }
+
+        .bar-title {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+        }
+
+        .bar-background {
+            width: 100%;
+
+            height: 12px;
+
+            background-color: #ddd;
+
+            border-radius: 20px;
+        }
+
+        .bar-fill {
+            height: 100%;
+
+            background-color: #22c55e;
+
+            border-radius: 20px;
+        }
+
+        .html {
+            width: 70%;
+        }
+
+        .data-entry {
+            width: 85%;
+        }
+
+        .pcba {
+            width: 90%;
+        }
+
+        .ms-office {
+            width: 80%;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            background-color: #f4f6f8;
+        }
+
+        .timeline {
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+        .timeline-box {
+            background-color: white;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            border-radius: 10px;
+
+            border-left: 5px solid #22c55e;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .timeline-box h3 {
+            font-size: 23px;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-box span {
+            color: #22c55e;
+
+            font-weight: bold;
+        }
+
+        .timeline-box p {
+            margin-top: 12px;
+
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background-color: white;
+        }
+
+        .project-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #f8fafc;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            border: 1px solid #ddd;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .project-top {
+            height: 150px;
+
+            background-color: #111827;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: white;
+
+            font-size: 45px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           SOCIAL MEDIA
+        ========================= */
+
+        .social {
+            background-color: #111827;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .social .section-title p {
+            color: #bbb;
+        }
+
+        .social-buttons {
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            margin: 8px;
+
+            border-radius: 8px;
+
+            color: white;
+
+            transition: 0.3s;
+        }
+
+        .facebook {
+            background-color: #1877f2;
+        }
+
+        .youtube {
+            background-color: #ff0000;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-4px);
+
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background-color: #f4f6f8;
+        }
+
+        .contact-container {
+            max-width: 800px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .contact-box {
+            background-color: white;
+
+            padding: 40px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-box p {
+            font-size: 18px;
+
+            color: #555;
+
+            margin: 15px 0;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #111827;
+
+            color: #aaa;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer span {
+            color: #22c55e;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .about-container {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .about-image {
+                width: 240px;
+                height: 240px;
+            }
+
+            .details-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Niloy<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Hi, I'm <span>Niloy Ahmed</span>
+            </h1>
+
+            <h2>
+                PCBA Repair Technician & Web Development Learner
+            </h2>
+
+            <p>
+                Welcome to my personal website.
+                I am interested in technology, electronics,
+                PCBA repair, data entry and web development.
+                I am continuously learning new skills
+                and improving myself every day.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#about" class="btn btn-primary">
+                    About Me
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                Get to know me
+            </p>
+
+        </div>
+
+
+        <div class="about-container">
+
+
+            <!-- YOUR PHOTO -->
+
+            <div class="about-image">
+
+                <img
+                    src="niloy.jpg"
+                    alt="Niloy Ahmed"
+                >
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h3>
+                    Hello, I'm Niloy Ahmed
+                </h3>
+
+                <p>
+                    I am a technology enthusiast who enjoys
+                    working with electronics, computers and
+                    modern technology.
+                </p>
+
+                <p>
+                    I have experience and interest in PCBA
+                    troubleshooting and motherboard repair.
+                    I am also learning HTML, CSS and web
+                    development to build my own websites.
+                </p>
+
+                <p>
+                    Besides technical work, I am interested
+                    in data entry, MS Office and improving
+                    my computer skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PERSONAL DETAILS -->
+
+    <section class="details">
+
+        <div class="section-title">
+
+            <h2>Personal Details</h2>
+
+            <p>
+                Some basic information about me
+            </p>
+
+        </div>
+
+
+        <div class="details-container">
+
+            <div class="detail-box">
+
+                <h3>Full Name</h3>
+
+                <p>
+                    Niloy Ahmed
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>Profession</h3>
+
+                <p>
+                    PCBA Repair Technician
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>Nationality</h3>
+
+                <p>
+                    Bangladeshi
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>Interests</h3>
+
+                <p>
+                    Technology, Electronics, Web Development
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>Currently Learning</h3>
+
+                <p>
+                    HTML, CSS & Web Development
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>Career Goal</h3>
+
+                <p>
+                    To continuously develop my technical skills
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SKILLS -->
+
+    <section class="skills" id="skills">
+
+        <div class="section-title">
+
+            <h2>My Skills</h2>
+
+            <p>
+                Things I work with and continue to improve
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+            <div class="skill-card">
+
+                <div class="icon">
+                    🔧
+                </div>
+
+                <h3>
+                    PCBA Repair
+                </h3>
+
+                <p>
+                    Motherboard troubleshooting,
+                    component replacement and
+                    electronic fault finding.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">
+                    💻
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Currently learning HTML, CSS
+                    and the fundamentals of
+                    website development.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data Entry
+                </h3>
+
+                <p>
+                    Fast typing, accurate data handling
+                    and working with digital information.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">
+                    📝
+                </div>
+
+                <h3>
+                    MS Office
+                </h3>
+
+                <p>
+                    Working with Microsoft Office
+                    applications and spreadsheets.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Troubleshooting
+                </h3>
+
+                <p>
+                    Identifying technical problems
+                    and finding practical solutions.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Technology
+                </h3>
+
+                <p>
+                    Interested in modern technology,
+                    computers and online tools.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SKILL BARS -->
+
+        <div class="skill-bars">
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+
+                    <span>PCBA Repair</span>
+
+                    <span>90%</span>
+
+                </div>
+
+                <div class="bar-background">
+
+                    <div class="bar-fill pcba"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+
+                    <span>Data Entry</span>
+
+                    <span>85%</span>
+
+                </div>
+
+                <div class="bar-background">
+
+                    <div class="bar-fill data-entry"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+
+                    <span>MS Office</span>
+
+                    <span>80%</span>
+
+                </div>
+
+                <div class="bar-background">
+
+                    <div class="bar-fill ms-office"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div class="bar-title">
+
+                    <span>HTML & CSS</span>
+
+                    <span>70%</span>
+
+                </div>
+
+                <div class="bar-background">
+
+                    <div class="bar-fill html"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="experience" id="experience">
+
+        <div class="section-title">
+
+            <h2>Experience & Learning</h2>
+
+            <p>
+                My technical journey
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-box">
+
+                <h3>
+                    PCBA Repair Technician
+                </h3>
+
+                <span>
+                    Electronics & Motherboard Repair
+                </span>
+
+                <p>
+                    Working with smartphone motherboards,
+                    troubleshooting hardware problems,
+                    testing circuits and replacing
+                    electronic components.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-box">
+
+                <h3>
+                    Data Entry
+                </h3>
+
+                <span>
+                    Computer Based Work
+                </span>
+
+                <p>
+                    Interested in accurate data entry,
+                    typing, MS Office and spreadsheet-based
+                    computer work.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-box">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <span>
+                    Currently Learning
+                </span>
+
+                <p>
+                    Learning HTML and CSS from the basics
+                    and building personal web pages
+                    through practical projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-title">
+
+            <h2>My Projects</h2>
+
+            <p>
+                Projects I am working on
+            </p>
+
+        </div>
+
+
+        <div class="project-container">
+
+
+            <div class="project-card">
+
+                <div class="project-top">
+                    🌐
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Personal Website
+                    </h3>
+
+                    <p>
+                        A personal portfolio website
+                        created using HTML and CSS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-top">
+                    🔧
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        PCBA Troubleshooting
+                    </h3>
+
+                    <p>
+                        Practical motherboard troubleshooting
+                        and electronic component repair work.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-top">
+                    💻
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        HTML Practice
+                    </h3>
+
+                    <p>
+                        Building different web pages
+                        while learning HTML and CSS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SOCIAL MEDIA -->
+
+    <section class="social">
+
+        <div class="section-title">
+
+            <h2>Find Me Online</h2>
+
+            <p>
+                Connect with me on social platforms
+            </p>
+
+        </div>
+
+
+        <div class="social-buttons">
+
+            <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                class="social-btn facebook">
+
+                Facebook
+
+            </a>
+
+
+            <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                class="social-btn youtube">
+
+                YouTube
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Feel free to get in touch
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-box">
+
+                <p>
+                    📧 Email:
+                   niloyahmed2600@gmail.com
+                </p>
+
+                <p>
+                    📱 Phone:
+                    +880 1571085045
+                </p>
+
+                <p>
+                    📍 Location:
+                    Bangladesh
+                </p>
+
+                <br>
+
+                <a
+                    href="niloyahmed2600@gmail.com"
+                    class="btn btn-primary">
+
+                    Send Me an Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <span>Niloy Ahmed</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
